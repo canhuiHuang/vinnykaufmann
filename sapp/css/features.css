@@ -1,0 +1,219 @@
+/* Transition Boxes */
+.transition-boxes {
+  display: flex;
+  justify-content: center;
+}
+
+.transition-boxes .plan {
+  width: 550px;
+  height: auto;
+  min-height: auto;
+  display: none;
+  padding-bottom: 35px;
+}
+.transition-boxes .plan:hover {
+  background-color: white;
+}
+.transition-boxes .plan .stages {
+  padding: 0 34px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.transition-boxes .plan.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.transition-boxes .plan .roadmap {
+  font-weight: 00;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  padding: 0;
+}
+
+.next-btn {
+  font-size: 19px;
+  font-weight: 800;
+  border-radius: 16px;
+  width: 60px;
+  color: white;
+  background-color: rgb(161, 187, 226);
+  transition: all ease 0.1s;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+.next-btn:hover {
+  color: rgb(238, 236, 236);
+  background-color: rgb(154, 173, 201);
+}
+.next-btn.hidden {
+  visibility: hidden;
+}
+
+/* Plans */
+.plan {
+  cursor: pointer;
+  transition: all ease-in 0.1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 460px;
+}
+.plan.selected {
+  border: solid 5px rgba(148, 212, 148, 0.75);
+}
+.plan:hover {
+  background-color: rgb(240, 239, 239);
+  transform: scale(1.01) !important;
+}
+.plan a {
+  align-self: center;
+  margin: 0;
+}
+.plan h6.heading-plan {
+  margin-bottom: 0;
+}
+/* Gradiente Text */
+grad_text.gradient-text {
+  line-height: 180%;
+}
+.gradient-text,
+.gradient-text:hover {
+  /* animation: rainbow-text-simple-animation-rev 0.75s ease forwards; */
+  /* animation: rainbow-text-simple-animation 0.5s ease-in forwards; */
+  animation: none;
+}
+.overflow .gradient-text {
+  animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+.overflow.scrolling .gradient-text {
+  animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+/* Packages */
+.packages {
+  display: none;
+  transition: all ease-in 0.2s;
+}
+.packages.show {
+  display: grid;
+}
+
+/* Rocket */
+.rocket-corner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 5;
+  transform: translate(260px, -60px);
+}
+#basic-packages .rocket-corner {
+  display: none;
+}
+
+/* Preview Box */
+#selected-plans-field {
+  border: 2px dashed rgba(32, 59, 83, 0.18);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+}
+
+#selected-plans-field input {
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  padding: 10px 10px;
+  margin: 4px 8px;
+  width: 178px;
+  pointer-events: none;
+  transition: all ease 0.1s;
+}
+#selected-plans-field input.app-plan {
+  background-color: rgb(238, 213, 213);
+}
+#selected-plans-field input.package-plan {
+  background-color: rgb(219, 240, 193);
+}
+#selected-plans-field input.extra-plan {
+  background-color: rgb(243, 207, 167);
+}
+#email-form h6 {
+  margin-bottom: 0;
+}
+#email-form textarea#plans-input {
+  display: none;
+}
+
+/* Trigger Elems */
+#packages-title {
+  display: none;
+}
+#packages-title.show {
+  display: block;
+}
+
+/* Hot styles */
+.fab-options a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Mobile responsiveness  */
+@media screen and (max-width: 479px) {
+  /* Mobile Rocket */
+  #max-packages .rocket-corner {
+    display: none;
+  }
+  #basic-packages .rocket-corner {
+    display: block;
+    transform: translate(220px, -38px);
+  }
+
+  /* corner phone number */
+  .nav-button {
+    display: block;
+  }
+  #callUs {
+    display: none;
+  }
+  /* title image SAPP.ROCKS */
+  .section-hero.single-page.wf-section {
+    transform: scale(0.92) translateX(40px);
+    margin-top: 22px;
+  }
+
+  /* ? circle */
+  .fab-container {
+    right: 17px !important;
+  }
+}
+
+/* Animations */
+@keyframes rainbow-text-simple-animation-rev {
+  0% {
+    background-size: 650%;
+  }
+  40% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@keyframes rainbow-text-simple-animation {
+  0% {
+    background-size: 100%;
+  }
+  80% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 650%;
+  }
+}

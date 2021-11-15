@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="705px" height="24px" viewBox="0 0 705 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="697" height="16" rx="8"></rect>
+        <filter x="-1.0%" y="-31.2%" width="102.0%" height="187.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="-5.33072245%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#4CD964" offset="0%"></stop>
+            <stop stop-color="#4EBDFB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Planung" transform="translate(-56.000000, -164.000000)">
+            <g id="Group" transform="translate(60.000000, 166.000000)">
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#D6D7D9" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M6,0 L170,0 L170,0 L170,16 L6,16 C2.6862915,16 4.05812251e-16,13.3137085 0,10 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="Rectangle" fill="url(#linearGradient-3)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

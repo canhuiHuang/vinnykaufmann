@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="705px" height="24px" viewBox="0 0 705 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle</title>
+    <defs>
+        <linearGradient x1="-5.33072245%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#4CD964" offset="0%"></stop>
+            <stop stop-color="#4EBDFB" offset="39.8552149%"></stop>
+            <stop stop-color="#9C45A1" offset="74.5812049%"></stop>
+            <stop stop-color="#FD7E05" offset="100%"></stop>
+        </linearGradient>
+        <path d="M66,166 L750,166 C753.865993,166 757,169.134007 757,173 L757,175 C757,178.865993 753.865993,182 750,182 L66,182 C62.6862915,182 60,179.313708 60,176 L60,172 C60,168.686292 62.6862915,166 66,166 Z" id="path-2"></path>
+        <filter x="-1.0%" y="-31.2%" width="102.0%" height="187.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle" transform="translate(-56.000000, -164.000000)">
+            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>
