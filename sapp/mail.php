@@ -1,24 +1,19 @@
 <?php
+header('Location: https://www.sapp.rocks');
        $name = $_POST['name'];
        $email = $_POST['email'];
        $firma = $_POST['firma'];
-       $plans = $_POST['plans'];
+       $plans = $_POST['plansInput'];
        $message = $_POST['message'];
        $from = 'From: My Contact Form';
        $to = 'v@sapp.rocks';
-       $subject = 'testing php script Vince project website?';
-
-       for ($x = 0; $x <= 10; $x++) {
-        echo "The number is: $x <br>";
-      }
+       $subject = 'sapp.rocks: Anfrage';
 
        $body = "From: $name\n E-Mail: $email\n Firma: $firma\n Plans: $plans\n Message:\n $message";
-
-       if ($_POST['submit']) {
-           if (mail ($to, $subject, $body, $from)) {
+       mail ($to, $subject, $body);
+           if (mail ($to, $subject, $body)) {
            echo '<p>Message Sent Successfully!</p>';
            } else {
            echo '<p>Ah! Try again, please?</p>';
            }
-       }
     ?>

@@ -7,8 +7,8 @@ const extraPlans = [];
 const appPlans = document.querySelectorAll(".app-plan");
 const packagePlans = document.querySelectorAll(".package-plan");
 const extraPlanElems = document.querySelectorAll(".extra-plan");
-const previewBox = document.querySelector("#selected-plans-field");
-const plansInput = document.querySelector("#email-form textarea#plans-input");
+const previewBox = document.querySelector("#selectedPlansField");
+const plansInput = document.querySelector("#email-form #plansInput");
 
 // Transition Boxes
 function changeStage(nextStage) {
@@ -66,6 +66,11 @@ const showPackages = (self, id) => {
     // Show trigger elements if apply
     document.querySelector("#packages-title").classList.add("show");
     document.querySelector(`.${id}`).classList.add("show");
+
+    // Scroll to next level of packages
+    setTimeout(() => {
+      location.href = "#category-packages";
+    }, 20);
   }
   renderPreviewBox();
 };
@@ -87,10 +92,20 @@ const selectPackagePlan = (self) => {
   if (self.classList.contains("selected")) {
     self.classList.remove("selected");
     packagePlan = "";
+
+    // Scroll to prev level of packages
+    setTimeout(() => {
+      location.href = "#plans";
+    }, 20);
   } else {
     // Make it selected
     self.classList.add("selected");
     packagePlan = self.querySelector("h6.heading-plan").innerText;
+
+    // Scroll to next level of packages
+    setTimeout(() => {
+      location.href = "#extraPlans";
+    }, 20);
   }
   renderPreviewBox();
 };
@@ -110,6 +125,13 @@ const selectExtraPlan = (self) => {
     // Make it selected
     self.classList.add("selected");
     extraPlans.push(self.querySelector("h6.heading-plan").innerText);
+
+    // Scroll to next level of packages
+    if (extraPlans.length >= 2) {
+      setTimeout(() => {
+        location.href = "#email-form";
+      }, 20);
+    }
   }
 
   renderPreviewBox();

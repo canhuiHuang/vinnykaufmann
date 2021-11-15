@@ -5,7 +5,7 @@
 }
 
 .transition-boxes .plan {
-  width: 550px;
+  width: 750px;
   height: auto;
   min-height: auto;
   display: none;
@@ -19,7 +19,12 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 38px;
   margin-bottom: 14px;
+}
+.transition-boxes .plan .stages h7.heading-form {
+  font-size: 17px !important;
+  font-weight: 700 !important;
 }
 
 .transition-boxes .plan.active {
@@ -29,9 +34,10 @@
   justify-content: flex-start;
 }
 .transition-boxes .plan .roadmap {
-  font-weight: 00;
-  margin-top: 40px;
-  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 70px;
+  margin-bottom: 40px;
   align-self: flex-start;
   padding: 0;
 }
@@ -117,14 +123,14 @@ grad_text.gradient-text {
 }
 
 /* Preview Box */
-#selected-plans-field {
+#selectedPlansField {
   border: 2px dashed rgba(32, 59, 83, 0.18);
   border-radius: 8px;
   padding: 10px 15px;
   margin-bottom: 8px;
 }
 
-#selected-plans-field input {
+#selectedPlansField input {
   border: none;
   border-radius: 18px;
   text-align: center;
@@ -134,19 +140,19 @@ grad_text.gradient-text {
   pointer-events: none;
   transition: all ease 0.1s;
 }
-#selected-plans-field input.app-plan {
+#selectedPlansField input.app-plan {
   background-color: rgb(238, 213, 213);
 }
-#selected-plans-field input.package-plan {
+#selectedPlansField input.package-plan {
   background-color: rgb(219, 240, 193);
 }
-#selected-plans-field input.extra-plan {
+#selectedPlansField input.extra-plan {
   background-color: rgb(243, 207, 167);
 }
 #email-form h6 {
   margin-bottom: 0;
 }
-#email-form textarea#plans-input {
+#email-form #plansInput {
   display: none;
 }
 
@@ -192,6 +198,18 @@ grad_text.gradient-text {
   .fab-container {
     right: 17px !important;
   }
+
+  /* Transition Boxes */
+  .transition-boxes .plan {
+    padding: 20px 12px;
+  }
+
+  .transition-boxes .plan .roadmap {
+    margin-top: 48px;
+    margin-bottom: 140px;
+    font-size: 12px;
+    line-height: 21px;
+  }
 }
 
 /* Animations */
@@ -216,4 +234,8 @@ grad_text.gradient-text {
   100% {
     background-size: 650%;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
