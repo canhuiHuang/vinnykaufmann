@@ -23,13 +23,19 @@ function changeStage(nextStage) {
     .classList.add("active");
 }
 
-// Listen for stages next button
+// Listen for stages next & prev button
 document
   .querySelector(".plan1 .next-btn")
   .addEventListener("click", () => changeStage(2));
 document
   .querySelector(".plan2 .next-btn")
   .addEventListener("click", () => changeStage(3));
+document
+  .querySelector(".plan2 .prev-btn")
+  .addEventListener("click", () => changeStage(1));
+document
+  .querySelector(".plan3 .prev-btn")
+  .addEventListener("click", () => changeStage(2));
 
 // App Plans (App Basic, App Plus, App Max)
 const showPackages = (self, id) => {
@@ -182,4 +188,37 @@ window.onscroll = () => {
   setTimeout(() => {
     document.querySelector(".overflow").classList.remove("scrolling");
   }, 250);
+
+  console.log(appPlan, packagePlan, extraPlans);
 };
+
+// Modal
+const openEls = document.querySelectorAll("[data-open]");
+const closeEls = document.querySelectorAll("[data-close]");
+const isVisible = "is-visible";
+
+for (const el of openEls) {
+  el.addEventListener("click", function () {
+    const modalId = this.dataset.open;
+    document.getElementById(modalId).classList.add(isVisible);
+  });
+}
+
+for (const el of closeEls) {
+  el.addEventListener("click", function () {
+    this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+  });
+}
+
+document.addEventListener("click", (e) => {
+  if (e.target == document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible").classList.remove(isVisible);
+  }
+});
+
+document.addEventListener("keyup", (e) => {
+  // if we press the ESC
+  if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible").classList.remove(isVisible);
+  }
+});

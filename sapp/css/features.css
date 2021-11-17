@@ -18,12 +18,13 @@
   padding: 0 34px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 38px;
+  justify-content: center;
+  margin-top: 5px;
   margin-bottom: 14px;
 }
 .transition-boxes .plan .stages h7.heading-form {
-  font-size: 17px !important;
+  font-size: 28px !important;
+  text-align: center;
   font-weight: 700 !important;
 }
 
@@ -42,22 +43,36 @@
   padding: 0;
 }
 
-.next-btn {
+.btns-container {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+}
+.btn {
   font-size: 19px;
   font-weight: 800;
   border-radius: 16px;
   width: 60px;
   color: white;
-  background-color: rgb(161, 187, 226);
   transition: all ease 0.1s;
-  align-self: flex-end;
-  justify-self: flex-end;
 }
+.next-btn {
+  background-color: rgb(161, 187, 226);
+}
+.prev-btn {
+  background-color: rgb(240, 140, 145);
+}
+.prev-btn:hover {
+  color: rgb(238, 236, 236);
+  background-color: rgb(212, 122, 126);
+}
+
 .next-btn:hover {
   color: rgb(238, 236, 236);
   background-color: rgb(154, 173, 201);
 }
-.next-btn.hidden {
+.next-btn.hidden,
+.prev-btn.hidden {
   visibility: hidden;
 }
 
@@ -111,12 +126,13 @@ grad_text.gradient-text {
 }
 
 /* Rocket */
+
 .rocket-corner {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 165px;
+  height: 165px;
   z-index: 5;
-  transform: translate(260px, -60px);
+  transform: translate(250px, -98px);
 }
 #basic-packages .rocket-corner {
   display: none;
@@ -180,6 +196,10 @@ grad_text.gradient-text {
     display: block;
     transform: translate(220px, -38px);
   }
+  .rocket-corner {
+    width: 100px;
+    height: 100px;
+  }
 
   /* corner phone number */
   .nav-button {
@@ -192,6 +212,9 @@ grad_text.gradient-text {
   .section-hero.single-page.wf-section {
     transform: scale(0.92) translateX(40px);
     margin-top: 22px;
+  }
+  #steps {
+    padding-top: 80px;
   }
 
   /* ? circle */
@@ -238,4 +261,214 @@ grad_text.gradient-text {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(49, 49, 49, 0.28);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: white;
+  overflow: auto;
+  cursor: default;
+  -webkit-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.17);
+  padding: 50px 10px;
+  padding-top: 0;
+}
+.modal-dialog h6 {
+  font-size: 14px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-dialog input {
+  width: 200px;
+  height: 38px;
+}
+.modal-dialog h7 {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-top: 9px;
+  align-self: flex-start;
+}
+#time-range {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+#time-range span {
+  font-weight: 600;
+}
+#from-time,
+#to-time {
+  width: 125px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.modal-dialog > * {
+  padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+  background: var(--lightgray);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header .close-modal {
+  font-size: 1.5rem;
+}
+
+.modal p + p {
+  margin-top: 1rem;
+}
+.close-modal {
+  background-color: transparent;
+  text-align: end;
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin-bottom: 22px;
+}
+#date {
+  cursor: pointer;
+}
+#modal-phone {
+  margin-bottom: 10px;
+}
+.modal-dialog .button.w-button {
+  margin-top: 22px;
+  padding: 0;
+}
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+[data-animation] .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s var(--bounceEasing);
+}
+
+[data-animation].is-visible .modal-dialog {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+[data-animation="slideInOutDown"] .modal-dialog {
+  transform: translateY(100%);
+}
+
+[data-animation="slideInOutTop"] .modal-dialog {
+  transform: translateY(-100%);
+}
+
+[data-animation="slideInOutLeft"] .modal-dialog {
+  transform: translateX(-100%);
+}
+
+[data-animation="slideInOutRight"] .modal-dialog {
+  transform: translateX(100%);
+}
+
+[data-animation="zoomInOut"] .modal-dialog {
+  transform: scale(0.2);
+}
+
+[data-animation="rotateInOutDown"] .modal-dialog {
+  transform-origin: top left;
+  transform: rotate(-1turn);
+}
+
+[data-animation="mixInAnimations"].is-visible .modal-dialog {
+  animation: mixInAnimations 2s 0.2s linear forwards;
+}
+
+[data-animation="slideInOutDown"].is-visible .modal-dialog,
+[data-animation="slideInOutTop"].is-visible .modal-dialog,
+[data-animation="slideInOutLeft"].is-visible .modal-dialog,
+[data-animation="slideInOutRight"].is-visible .modal-dialog,
+[data-animation="zoomInOut"].is-visible .modal-dialog,
+[data-animation="rotateInOutDown"].is-visible .modal-dialog {
+  transform: none;
+}
+
+@keyframes mixInAnimations {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: rotate(20deg);
+  }
+
+  30% {
+    transform: rotate(-20deg);
+  }
+
+  40% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  60% {
+    transform: rotate(10deg);
+  }
+
+  70% {
+    transform: rotate(-10deg);
+  }
+
+  80% {
+    transform: rotate(5deg);
+  }
+
+  90% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

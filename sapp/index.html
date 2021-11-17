@@ -49,6 +49,13 @@
           <i class="fas fa-comments"></i>
         </div>
       </li> -->
+      
+      <li>
+        <span class="fab-label" class="open-modal" data-open="modal1">Schedule a call</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-phone"></i>
+        </div>
+      </li>
       <li>
         <span class="fab-label"><a href="tel:+41714115194">+41 714115194</a></span>
         <div class="fab-icon-holder">
@@ -128,7 +135,11 @@
               <li>Wir erstellen eine Entwicklungs-Roadmap für Deine App</li>
               <li>Du segnest den Plan ab und bezahlstt</li>
             </ul>
-            <button class="next-btn"><i class="fas fa-angle-right"></i></button>
+            <div class="btns-container">
+              <button class=" btn prev-btn hidden"><i class="fas fa-angle-left"></i></button>
+              <button class=" btn next-btn"><i class="fas fa-angle-right"></i></button>
+            </div>
+            
           </div>
           <div data-w-id="98cc9e54-5ed0-d7a9-0e64-04b2923ada57"
             style="-webkit-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
@@ -143,7 +154,11 @@
               <li>Wir skizzieren die Benutzeroberflächen mit Dir</li>
               <li>Validierungs-Sessions damit alles passt</li>
             </ul>
-            <button class="next-btn"><i class="fas fa-angle-right"></i></button>
+            <div class="btns-container">
+              <button class=" btn prev-btn"><i class="fas fa-angle-left"></i></button>
+              <button class=" btn next-btn"><i class="fas fa-angle-right"></i></button>
+            </div>
+            
           </div>
           <div data-w-id="98cc9e54-5ed0-d7a9-0e64-04b2923ada57"
             style="-webkit-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
@@ -158,7 +173,11 @@
               <li>Wir bauen die Basis Deiner App mit allen Kernfunktionen</li>
               <li>Wir bauen dann die restlichen Features ein</li>
             </ul>
-            <button class="next-btn hidden"><i class="fas fa-angle-right"></i></button>
+            <div class="btns-container">
+              <button class=" btn prev-btn"><i class="fas fa-angle-left"></i></button>
+              <button class="btn next-btn hidden"><i class="fas fa-angle-right"></i></button>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -924,7 +943,7 @@
               <form id="email-form" name="email-form" data-name="Email Form" class="form" action="mail.php" method="post">
                 <h6>Selected Plans:</h6>
                 <div id="selectedPlansField"></div>
-                <input id="plansInput" name="plansInput"></input>
+                <textarea id="plansInput" name="plansInput"></textarea>
                 <input type="text"
                   class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" id="name">
                 <input type="text" class="text-field w-input" maxlength="256" name="firma" data-name="firma"
@@ -946,6 +965,28 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="modal" id="modal1" data-animation="slideInOutLeft">
+  <div class="modal-dialog">
+    <form id="phone-form" name="phone-form" data-name="phone Form" class="form" action="phone.php" method="post">
+      <section class="modal-content">
+        <button class="close-modal" aria-label="close modal" data-close>
+          ✕  
+        </button>
+        <h6>We will call you back to this number: </h6>
+        <input placeholder="Phone number" class="text-field w-input" type="text" name="phoneNumber" id="modal-phone">
+        <input type="date" name="date" id="date" class="text-field w-input">
+        <h7>Call me between: </h7>
+        <div id="time-range">
+          <input type="time" name="fromTime" id="from-time" class="text-field w-input">
+          <span>-</span>
+          <input type="time" name="toTime" id="to-time" class="text-field w-input">
+        </div>
+        <input type="submit" value="Senden" data-wait="Please wait..." class="button w-button">
+      </section>
+    </form>
+    
   </div>
 </div>
   <div class="section-footer wf-section">
